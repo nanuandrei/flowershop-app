@@ -1,2 +1,3 @@
 # flowershop-app
-Flowershop, ecommerce application, built in Django
+Flowershop, ecommerce application
+Built in Django
