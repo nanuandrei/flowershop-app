@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Florărie</title>
+    <link rel="stylesheet" href="{% static 'main1.css' %}">
+</head>
+<body>
+<h1 align="center">Florărie NANU</h1>
+<table>
+        <tr>
+    <td class="user">
+        <ul class="cos">
+            {% if username %}
+                <li class="cos">
+                    <a class="cos" href="{% url 'cos' %}">Produse in cos: {{ cos }} </a><br>
+                    <a class="cos" href="{% url 'istoric' %}">Istoric</a>
+                </li>
+        </ul>
+    </td>
+    <td class="log">
+        <ul class="log">
+            <li class="log">
+                <div>Bine ai venit {{username}}</div>
+                <pre><a class="log" href="{% url 'profil' %}">Datele tale de contact</a>
+                <a class="log" href="/logout/">logout</a></pre>
+            </li>
+            {% else %}
+                <li class="login"> <a class='login' href="{% url 'login' %}">Logheaza-te!</a> </li>
+            {% endif %}
+        </ul>
+    </td>
+        </tr>
+</table>
+    <div id="tabs">
+        <ul>
+          <li><a href="/">Acasa</a></li>
+          <li><a id="cont" href="/listare/">Toate produsele</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </div>
+    {% block content%}
+    {% endblock content %}
+<script src="{%static 'main.js' %}"></script>
+</body>
+</html>

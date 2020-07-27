@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Istoric</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% load static %}
+ {% block content %}
+<h3> Lista de produse din {{titlu}} </h3>
+
+{% if produse %}
+    {% for produs in produse %}
+        <div class="listare">
+            <a href ="{% url 'entry' produs.id %}">
+                <img class="poza_l" src="{% static produs.poza.url %}"/>
+                <div>Nume: {{produs.nume}}</div>
+                <div>Marca: {{produs.tip}}</div>
+                <div>Numar: {{produs.numar}}</div>
+                <div>Pret: {{produs.pret_achizitie}}</div>
+                <div>Data: {{produs.data}}</div>
+                <div>Finalizat: {{produs.finalizat}}</div>
+            </a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Nu aveti produse comandate</p>
+{% endif %}
+
+{% endblock content %}
+</body>
+</html>

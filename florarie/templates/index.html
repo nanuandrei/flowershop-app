@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florărie</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+<h5>Promoții:</h5>
+<div class="listare">
+    <a href="{% url 'entry' floare_r.id %}">
+        <img  class="poza_l" src="{% static floare_r.poza.url %}" />
+        <p>Azi promoție: {{floare_r.nume}} la
+                            {{floare_r.pret_cumparare | floatformat:2}} lei (preț întreg: {{floare_r.pret}})</p>
+    </a>
+</div>
+
+{% endblock content %}
+</body>
+</html>

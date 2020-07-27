@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+<h3> Lista de produse din {{titlu}} </h3>
+{% if produse %}
+    {% for produs in produse %}
+        <div class="listare">
+            <a href ="{% url 'entry' produs.id %}">
+                <img class="poza_l" src="{% static produs.poza.url %}" />
+                <div>Nume: {{produs.nume}}</div>
+                <div>Numar: {{produs.numar}}</div>
+                <div>Pret: {{produs.pret}}</div>
+            </a>
+        </div>
+    {% endfor %}
+    <div>
+        <button><a href ="{% url 'comanda' %}">Comanda</a></button>
+        <button><a href ="{% url 'goleste_cos' %}">Golește coșul</a></button>
+    </div>
+
+{% else %}
+    <p>Nu aveti produse in cos</p>
+{% endif %}
+
+{% endblock content %}
+</body>
+</html>

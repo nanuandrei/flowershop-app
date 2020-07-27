@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florărie</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+<h5>Listare produse:</h5>
+{% for floare in flori %}
+    <div class="listare">
+        <a href ="{% url 'entry' floare.id %}">
+            <img  class="poza_l" src="{% static floare.poza.url %}" />
+            <p>{{floare.tip}}: {{floare.nume}} la {{floare.pret}} lei</p>
+        </a>
+    </div>
+    {% endfor %}
+
+<div class="listare">
+    <a href ="{% url 'entry' floare_r.id %}">
+        <img class="poza_l" src="{% static floare_r.poza.url %}" />
+        <p>{{floare_r.tip}}: {{floare_r.nume}} la preț redus: {{floare_r.pret_cumparare | floatformat:2}}
+            (preț întreg: {{floare_r.pret}} lei)</p>
+    </a>
+</div>
+
+{% endblock content %}
+</body>
+</html>

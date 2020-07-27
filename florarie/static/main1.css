@@ -1,0 +1,161 @@
+body {
+	font: bold 14px/1.5em Verdana;
+	background: url(fundal.jpg) ;
+  	background-size: auto;
+    background-color: #cccccc;
+	margin: 1vmax;
+    padding: 1vmax;
+	opacity: 1;
+	color: white;
+	text-align:center;
+	align:center;
+}
+
+img#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
+
+
+h1 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	}
+
+h3 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:18px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	}	
+	
+hr {
+	border:none;
+	border-top:4px solid #CCCCCC;
+	height:4px;
+	margin-bottom:25px;
+	}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    text-decoration: none;
+    color: white;
+	font-size:.9rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+	font-size:15px/1.5em;
+	text-align: center;
+}
+
+a:hover {
+    //background-color: yellow;
+	color: white;
+	opacity: .8;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+li a:active {
+    background-color: #4CAF50;
+}
+	
+button {
+	background-color: green;
+	color: white;
+	text-align: right;
+}
+
+#tabs ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    padding:0%
+}
+
+#tabs li {
+    width:33.29%;
+    float: left;
+}
+
+#cont {
+    border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
+    }
+
+#tabs li:active {
+    background-color: #4CAF50;
+}
+
+#tabs  li:selected   {
+    background-color: green;
+}
+
+#tabs li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px ;
+    padding-left:0px;
+    text-decoration: none;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+
+/* End IE5-Mac hack */
+#tabs a:hover span {
+	color:green;
+}
+
+#tabs a:hover span {
+	color:green;
+}
+
+
+.form-contact{
+    float:center;
+    text-align:center;
+}
+
+.user {
+    width:50vw;
+    font-size: 13px;
+    }
+
+.log {
+    width:50vw;
+    font-size: 13px;
+    }
+
+.form_c{
+margin:5% 30% 2%;
+    }
+
+.poza_l{
+    width: 150px;
+    height:150px;
+    }
+
+.listare{
+    display: inline-block;
+    margin: 2%;
+    transition: all 0.4s ease-in-out;
+    }
+
+.listare:hover{
+    transform: scale(1.05);
+    }

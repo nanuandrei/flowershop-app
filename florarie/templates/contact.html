@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florărie</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% block content %}
+  <h3>Contact</h3>
+  <table class="form_c" >
+      <form role="form" method="post" id="form-contact">
+         {% csrf_token %}
+         {{ form.as_table }}
+      </form>
+  </table>
+<button type="submit" form="form-contact">Trimite</button>
+{% endblock %}
+</body>
+</html>

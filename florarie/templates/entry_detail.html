@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Florărie</title>
+</head>
+<body>
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+<table>
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% if produs.id  != zi %}
+        <h2>{{produs.tip}}</h2>
+        <div><img  src="{% static produs.poza.url %}" />
+            <p> Nume: {{produs.nume}} </p>
+            <p> Detalii: {{produs.descriere}}</p>
+            <p> Pret: {{produs.pret}} lei</p>
+        </div>
+        {%if produs.stoc != 0 %}
+             <p> Stoc: {{produs.stoc}}</p>
+             <button onclick="window.location.href = '{% url 'adauga_cos' produs.id%}';">Adauga in cos</button>
+        {% else %}
+             <tr><td> Stoc:</td><td> Produsul nu mai e pe stoc. Va rugam sa ne contactati!</td> </tr>
+        {% endif %}
+    {% else %}
+        <h2>{{floare_r.tip}}</h2>
+        <div>
+            <img class="blur-image" src="{% static floare_r.poza.url %}" />
+            <p> Nume: {{floare_r.nume}} </p>
+            <p> Detalii: {{floare_r.descriere}}</p>
+            <p> Pret: {{floare_r.pret_cumparare | floatformat:2}} lei (preț întreg: {{floare_r.pret}} lei)</p>
+        </div>
+        {%if floare_r.stoc != 0 %}
+            <div>
+                <p> Stoc: {{floare_r.stoc}}</p><br>
+                <button onclick="window.location.href = '{% url 'adauga_cos' floare_r.id%}';">Adauga in cos</button>
+            </div>
+        {% else %}
+            <p> Stoc: Produsul nu mai e pe stoc. Va rugam sa ne contactati!</p>
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}
+</body>
+</html>
